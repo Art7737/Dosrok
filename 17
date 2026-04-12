@@ -1,0 +1,14 @@
+s = open("17_11111.txt").readlines()
+s = [int(x) for x in s]
+mns = 10 ** 20
+for x in s:
+    if x % 23 == 0:
+        mns = min(x, mns)
+k = 0
+mx = 0
+for i in range(len(s)-1):
+    if s[i] % mns == 0 or s[i+1] % mns == 0:
+        sm = s[i] + s[i+1]
+        k += 1
+        mx = max(mx, sm)
+print(k, mx)
