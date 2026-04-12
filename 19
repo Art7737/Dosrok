@@ -2,7 +2,7 @@ def f(a, s, p):
     if a + s >= 65 and p == 3:
         return True
     if a + s >= 65 and p == 2:
-        return True
+        return False
     if a + s < 65 and p == 3:
         return False
     if p % 2 == 0:
