@@ -1,0 +1,29 @@
+s = open("24777777.txt").readline()
+R = -1
+L = -1
+mx = 0
+countbc = 0
+for i in range(len(s)):
+    if countbc <= 180:
+        R += 1
+        if R == len(s):
+            break
+        if s[R:R+1] == "BC":
+            countbc += 1
+    else:
+        L += 1
+        if s[L:L+1] == "BC":
+            countbc -= 1
+    if countbc == 180:
+        mx = max(mx, R-L)
+print(mx)
+
+
+mx = 0
+
+for i in range(len(s)):
+    for j in range(i+361,len(s)):
+        sr = s[i:j]
+        if sr.count("BC") == 180:
+              mx = max(mx, len(sr))
+              print(mx)
